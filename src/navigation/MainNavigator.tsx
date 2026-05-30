@@ -7,25 +7,30 @@ import { useAuthStore } from '../store/authStore';
 import { KmerFretColors } from '../theme/theme';
 import { LoadingOverlay } from '../components/common/LoadingOverlay';
 
-import ImporterHomeScreen from '../screens/importer/ImporterHomeScreen';
-import CreateMissionScreen from '../screens/importer/CreateMissionScreen';
-import MissionDetailScreen from '../screens/importer/MissionDetailScreen';
-import DriverHomeScreen from '../screens/driver/DriverHomeScreen';
-import ActiveMissionScreen from '../screens/driver/ActiveMissionScreen';
-import QRScanScreen from '../screens/driver/QRScanScreen';
-import ProfileScreen from '../screens/shared/ProfileScreen';
-import DocumentScanScreen from '../screens/shared/DocumentScanScreen';
-import AlertScreen from '../screens/AlertScreen';
+import ImporterHomeScreen   from '../screens/importer/ImporterHomeScreen';
+import CreateMissionScreen  from '../screens/importer/CreateMissionScreen';
+import MissionDetailScreen  from '../screens/importer/MissionDetailScreen';
+import DriverHomeScreen     from '../screens/driver/DriverHomeScreen';
+import ActiveMissionScreen  from '../screens/driver/ActiveMissionScreen';
+import QRScanScreen         from '../screens/driver/QRScanScreen';
+import ProfileScreen        from '../screens/shared/ProfileScreen';
+import DocumentScanScreen   from '../screens/shared/DocumentScanScreen';
+import AlertScreen          from '../screens/AlertScreen';
+import MapScreen            from '../screens/shared/MapScreen';
+import RatingScreen         from '../screens/shared/RatingScreen';
+import StatsScreen          from '../screens/shared/StatsScreen';
 
 // ─── Param lists ──────────────────────────────────────────────────────────────
 
 export type ImporterTabParamList = {
   ImporterHome: undefined;
+  ImMap: undefined;
   ImProfile: undefined;
 };
 
 export type DriverTabParamList = {
   DriverHome: undefined;
+  DrMap: undefined;
   DrProfile: undefined;
 };
 
@@ -34,14 +39,13 @@ export type MainStackParamList = {
   DriverTabs: undefined;
   CreateMission: undefined;
   MissionDetail: { missionId: string };
-  ActiveMission: {
-    missionId: string;
-    originLabel: string;
-    destinationLabel: string;
-  };
+  ActiveMission: { missionId: string; originLabel: string; destinationLabel: string };
   QRScan: { missionId: string };
   DocumentScan: { missionId: string };
   Alert: { missionId?: string };
+  Map: undefined;
+  Rating: { missionId: string; reviewedName: string };
+  Stats: undefined;
 };
 
 // ─── Navigateurs ─────────────────────────────────────────────────────────────
@@ -86,18 +90,17 @@ function ImporterTabsNavigator() {
       <ImpTab.Screen
         name="ImporterHome"
         component={ImporterHomeScreen}
-        options={{
-          title: 'Missions',
-          tabBarIcon: ({ focused }) => tabIcon('truck-delivery', focused),
-        }}
+        options={{ title: 'Missions', tabBarIcon: ({ focused }) => tabIcon('truck-delivery', focused) }}
+      />
+      <ImpTab.Screen
+        name="ImMap"
+        component={MapScreen}
+        options={{ title: 'Carte', tabBarIcon: ({ focused }) => tabIcon('map', focused) }}
       />
       <ImpTab.Screen
         name="ImProfile"
         component={ProfileScreen}
-        options={{
-          title: 'Profil',
-          tabBarIcon: ({ focused }) => tabIcon('account-circle', focused),
-        }}
+        options={{ title: 'Profil', tabBarIcon: ({ focused }) => tabIcon('account-circle', focused) }}
       />
     </ImpTab.Navigator>
   );
@@ -109,18 +112,17 @@ function DriverTabsNavigator() {
       <DrvTab.Screen
         name="DriverHome"
         component={DriverHomeScreen}
-        options={{
-          title: 'Disponibles',
-          tabBarIcon: ({ focused }) => tabIcon('clipboard-list', focused),
-        }}
+        options={{ title: 'Disponibles', tabBarIcon: ({ focused }) => tabIcon('clipboard-list', focused) }}
+      />
+      <DrvTab.Screen
+        name="DrMap"
+        component={MapScreen}
+        options={{ title: 'Carte', tabBarIcon: ({ focused }) => tabIcon('map', focused) }}
       />
       <DrvTab.Screen
         name="DrProfile"
         component={ProfileScreen}
-        options={{
-          title: 'Profil',
-          tabBarIcon: ({ focused }) => tabIcon('account-circle', focused),
-        }}
+        options={{ title: 'Profil', tabBarIcon: ({ focused }) => tabIcon('account-circle', focused) }}
       />
     </DrvTab.Navigator>
   );
@@ -130,48 +132,24 @@ function DriverTabsNavigator() {
 
 export function MainNavigator() {
   const { userRole } = useAuthStore();
-
   if (!userRole) return <LoadingOverlay visible message="Chargement…" />;
-
-  const isImporter = userRole === 'IMPORTER';
 
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      {isImporter ? (
+      {userRole === 'IMPORTER' ? (
         <Stack.Screen name="ImporterTabs" component={ImporterTabsNavigator} />
       ) : (
         <Stack.Screen name="DriverTabs" component={DriverTabsNavigator} />
       )}
-      <Stack.Screen
-        name="CreateMission"
-        component={CreateMissionScreen}
-        options={{ presentation: 'modal', animation: 'slide_from_bottom' }}
-      />
-      <Stack.Screen
-        name="MissionDetail"
-        component={MissionDetailScreen}
-        options={{ animation: 'slide_from_right' }}
-      />
-      <Stack.Screen
-        name="ActiveMission"
-        component={ActiveMissionScreen}
-        options={{ animation: 'slide_from_right' }}
-      />
-      <Stack.Screen
-        name="QRScan"
-        component={QRScanScreen}
-        options={{ presentation: 'modal', animation: 'slide_from_bottom' }}
-      />
-      <Stack.Screen
-        name="DocumentScan"
-        component={DocumentScanScreen}
-        options={{ presentation: 'modal', animation: 'slide_from_bottom' }}
-      />
-      <Stack.Screen
-        name="Alert"
-        component={AlertScreen}
-        options={{ presentation: 'modal', animation: 'slide_from_bottom' }}
-      />
+      <Stack.Screen name="CreateMission"  component={CreateMissionScreen}  options={{ presentation: 'modal', animation: 'slide_from_bottom' }} />
+      <Stack.Screen name="MissionDetail"  component={MissionDetailScreen}  options={{ animation: 'slide_from_right' }} />
+      <Stack.Screen name="ActiveMission"  component={ActiveMissionScreen}  options={{ animation: 'slide_from_right' }} />
+      <Stack.Screen name="QRScan"         component={QRScanScreen}         options={{ presentation: 'modal', animation: 'slide_from_bottom' }} />
+      <Stack.Screen name="DocumentScan"   component={DocumentScanScreen}   options={{ presentation: 'modal', animation: 'slide_from_bottom' }} />
+      <Stack.Screen name="Alert"          component={AlertScreen}          options={{ presentation: 'modal', animation: 'slide_from_bottom' }} />
+      <Stack.Screen name="Map"            component={MapScreen}            options={{ animation: 'slide_from_right' }} />
+      <Stack.Screen name="Rating"         component={RatingScreen}         options={{ presentation: 'modal', animation: 'slide_from_bottom' }} />
+      <Stack.Screen name="Stats"          component={StatsScreen}          options={{ animation: 'slide_from_right' }} />
     </Stack.Navigator>
   );
 }
