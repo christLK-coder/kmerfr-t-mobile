@@ -1,0 +1,75 @@
+{
+  "expo": {
+    "name": "KmerFret",
+    "slug": "kmerfrеt",
+    "version": "1.0.0",
+    "runtimeVersion": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1B5E20"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#1B5E20"
+      },
+      "package": "cm.kmerfrеt.app",
+      "versionCode": 1,
+      "compileSdkVersion": 35,
+      "targetSdkVersion": 35,
+      "permissions": [
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_BACKGROUND_LOCATION",
+        "android.permission.CAMERA",
+        "android.permission.READ_MEDIA_IMAGES",
+        "android.permission.SEND_SMS",
+        "android.permission.VIBRATE",
+        "android.permission.INTERNET",
+        "android.permission.ACCESS_NETWORK_STATE"
+      ]
+    },
+    "ios": {
+      "bundleIdentifier": "cm.kmerfrеt.app",
+      "supportsTablet": false,
+      "infoPlist": {
+        "NSCameraUsageDescription": "Scanner les documents du port et les QR Codes de livraison",
+        "NSLocationWhenInUseUsageDescription": "Suivre votre position pour les missions de transport",
+        "NSLocationAlwaysUsageDescription": "Télémétrie continue pendant les missions de transport"
+      }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "kmerfrеt-app"
+      }
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "KmerFret utilise votre position pour les missions de transport.",
+          "isAndroidBackgroundLocationEnabled": true
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "KmerFret a besoin de la caméra pour scanner les documents et les QR Codes."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "KmerFret accède à vos photos pour importer des documents portuaires."
+        }
+      ],
+      "expo-sensors",
+      "expo-sqlite",
+      "expo-secure-store"
+    ]
+  }
+}
