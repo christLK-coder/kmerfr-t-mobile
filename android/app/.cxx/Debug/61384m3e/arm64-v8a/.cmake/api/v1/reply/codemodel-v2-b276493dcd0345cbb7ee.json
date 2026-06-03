@@ -1,0 +1,238 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "rnasyncstorage_autolinked_build",
+					"jsonFile" : "directory-rnasyncstorage_autolinked_build-Debug-e6c964c4a1867a4458ea.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "C:/Users/USER/kmerfret/mobile/node_modules/@react-native-async-storage/async-storage/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "RNCNetInfoSpec_autolinked_build",
+					"jsonFile" : "directory-RNCNetInfoSpec_autolinked_build-Debug-7b4d0075e244716cb8bd.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "C:/Users/USER/kmerfret/mobile/node_modules/@react-native-community/netinfo/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "rnstripe_autolinked_build",
+					"jsonFile" : "directory-rnstripe_autolinked_build-Debug-814fa779f4935a80fcc7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "C:/Users/USER/kmerfret/mobile/node_modules/@stripe/stripe-react-native/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "safeareacontext_autolinked_build",
+					"jsonFile" : "directory-safeareacontext_autolinked_build-Debug-c2410b01e594c844053a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "C:/Users/USER/kmerfret/mobile/node_modules/react-native-safe-area-context/android/src/main/jni",
+					"targetIndexes" : 
+					[
+						7
+					]
+				},
+				{
+					"build" : "rnscreens_autolinked_build",
+					"jsonFile" : "directory-rnscreens_autolinked_build-Debug-8f4292d918a883b0304d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "C:/Users/USER/kmerfret/mobile/node_modules/react-native-screens/android/src/main/jni",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "rnsvg_autolinked_build",
+					"jsonFile" : "directory-rnsvg_autolinked_build-Debug-e6c33f9b375155ecb985.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "C:/Users/USER/kmerfret/mobile/node_modules/react-native-svg/android/src/main/jni",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"build" : "RNCWebViewSpec_autolinked_build",
+					"jsonFile" : "directory-RNCWebViewSpec_autolinked_build-Debug-7f036a04a37d104ef6dd.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "C:/Users/USER/kmerfret/mobile/node_modules/react-native-webview/android/build/generated/source/codegen/jni",
+					"targetIndexes" : 
+					[
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					],
+					"name" : "appmodules",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "appmodules::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appmodules-Debug-ae1be4f65beaad4e0296.json",
+					"name" : "appmodules",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "react_codegen_RNCNetInfoSpec::@c36c96bfd5b5770618a5",
+					"jsonFile" : "target-react_codegen_RNCNetInfoSpec-Debug-6883167ca3087c81c9ae.json",
+					"name" : "react_codegen_RNCNetInfoSpec",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "react_codegen_RNCWebViewSpec::@eb48929f9f7453740a6c",
+					"jsonFile" : "target-react_codegen_RNCWebViewSpec-Debug-6fd7d2f1c3d5a612b88f.json",
+					"name" : "react_codegen_RNCWebViewSpec",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "react_codegen_rnasyncstorage::@1596841e19ec5b9eeffe",
+					"jsonFile" : "target-react_codegen_rnasyncstorage-Debug-919a3e3d5f7e669f6055.json",
+					"name" : "react_codegen_rnasyncstorage",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "react_codegen_rnscreens::@25bcbd507e98d3a854ad",
+					"jsonFile" : "target-react_codegen_rnscreens-Debug-515a6470df51f1d421aa.json",
+					"name" : "react_codegen_rnscreens",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "react_codegen_rnstripe::@65863f00eb0279fa1385",
+					"jsonFile" : "target-react_codegen_rnstripe-Debug-6e1cb9449e72541c26fe.json",
+					"name" : "react_codegen_rnstripe",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "react_codegen_rnsvg::@4f40eb209d0c0b4a3b65",
+					"jsonFile" : "target-react_codegen_rnsvg-Debug-aea73859d61ef33d8489.json",
+					"name" : "react_codegen_rnsvg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "react_codegen_safeareacontext::@7984cd80db47aa7b952a",
+					"jsonFile" : "target-react_codegen_safeareacontext-Debug-903eea28e870530b183f.json",
+					"name" : "react_codegen_safeareacontext",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/USER/kmerfret/mobile/android/app/.cxx/Debug/61384m3e/arm64-v8a",
+		"source" : "C:/Users/USER/kmerfret/mobile/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

@@ -1,0 +1,9 @@
+﻿node_modules/
+.expo/
+android/app/build/
+android/.gradle/
+ios/
+*.jks
+*.keystore
+google-services.json
+.env.local
